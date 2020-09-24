@@ -4,6 +4,7 @@ import { Container, Row, Col, Spinner } from 'reactstrap';
 import { Switch, Route } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandPeace } from '@fortawesome/free-solid-svg-icons';
+import SiteNavbar from './components/Navbar';
 
 const Home = lazy(() => import('./pages/Home'));
 const Pages = lazy(() => import('./pages/Pages'));
@@ -11,6 +12,14 @@ const Pages = lazy(() => import('./pages/Pages'));
 function App() {
   return (
     <div>
+			<Container fluid className="page-border">
+				<Row>
+					<Col>
+						<SiteNavbar />
+					</Col>
+				</Row>
+			</Container>
+
 			<Suspense fallback={ <Spinner color="primary"/> }>
 				<Switch>
 					<Route path="/pages" component={Pages} />

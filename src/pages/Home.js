@@ -6,18 +6,10 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
-import SiteNavbar from '../components/Navbar';
 
 const Home = () => {
 	return (
 		<Fragment>
-			<Container fluid className="page-border">
-				<Row>
-					<Col>
-						<SiteNavbar />
-					</Col>
-				</Row>
-			</Container>
 			<Container id="about">
 				<Row className="align-items-center justify-content-between py-5">
 					<Col md="4">

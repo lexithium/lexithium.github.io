@@ -1,7 +1,6 @@
 import React, { Fragment, lazy, Suspense, useEffect } from 'react';
-import { Spinner, Container, Row, Col } from 'reactstrap';
+import { Spinner } from 'reactstrap';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import SiteNavbar from '../components/Navbar';
 
 const BlockMuseum = lazy(() => import('./BlockMuseum'));
 const Monitor = lazy(() => import('./Monitor'));
@@ -23,14 +22,6 @@ const Pages = (props) => {
 	
 	return (
 		<Fragment>
-			<Container fluid className="page-border">
-				<Row>
-					<Col>
-						<SiteNavbar />
-					</Col>
-				</Row>
-			</Container>
-
 			<Suspense fallback={<Spinner color="primary" />}>
 				<Switch>
 					<Route path={`${props.match.url}/block-museum`} component={BlockMuseum} />
