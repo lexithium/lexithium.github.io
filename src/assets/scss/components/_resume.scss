@@ -1,0 +1,27 @@
+.resume-position {
+	font-weight: bold;
+	margin-bottom: 0;
+}
+
+.resume-time {
+	font-style: italic;
+	margin-bottom: 0;
+}
+
+.resume-description {
+	margin-left: 40px;
+}
+
+.resume {
+	padding-top: 100px;
+	padding-left: 30px;
+	border-left:1px solid $border-color;
+	.flags {
+		left: -10px;
+	}
+}
+
+.resume-awards {
+	padding-top: 100px;
+	padding-right: 30px;
+}

@@ -1,0 +1,56 @@
+.hoverstates {
+	text-align:center;
+	background-color:rgba(21,24,33,0.6);
+	// margin-left:-999em;
+	opacity: 0;
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	color:white;
+	// border-radius:5px;
+	font-family: "Quicksand", sans-serif;
+	text-decoration:none;
+	font-weight:400;
+	p {
+		position:relative;
+		top:50%;
+		margin:-20px 0 0 0;
+	}
+}
+
+.card-hover {
+	.card-img-top {
+		// width: auto;
+		// height: 100%;
+		// max-width: none;
+		// max-height: 100%;
+		height: 200px;
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+	}
+	.card-img-overlay {
+		padding: 0;
+		.hover-state {
+			position: absolute;
+			width: 100%;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color:rgba(21,24,33,0.6);
+			font-family: $detail-font;
+			color: $white;
+			opacity: 0;
+			transition: $transition-fade;
+			text-align: center;
+			padding: 0.5rem;
+			border-radius: $border-radius;
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+}
