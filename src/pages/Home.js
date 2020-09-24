@@ -132,6 +132,7 @@ const Home = () => {
 								InDesign<br/>
 								Photoshop<br/>
 								Premiere<br/>
+								XD
 							</Col>
 						</Row>
 					</Col>

@@ -22,7 +22,7 @@ const Pages = (props) => {
 	
 	return (
 		<Fragment>
-			<Suspense fallback={<Spinner color="primary" />}>
+			<Suspense fallback={<Spinner color="primary" className="page-loader" />}>
 				<Switch>
 					<Route path={`${props.match.url}/block-museum`} component={BlockMuseum} />
 					<Route path={`${props.match.url}/nabj`} component={Monitor} />

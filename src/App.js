@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, Fragment } from 'react';
 import './assets/scss/app.scss';
 import { Container, Row, Col, Spinner } from 'reactstrap';
 import { Switch, Route } from 'react-router-dom';
@@ -11,25 +11,27 @@ const Pages = lazy(() => import('./pages/Pages'));
 
 function App() {
   return (
-    <div>
-			<Container fluid className="page-border">
-				<Row>
-					<Col>
-						<SiteNavbar />
-					</Col>
-				</Row>
-			</Container>
+    <Fragment>
+			<div className="content">
+				<Container fluid className="page-border">
+					<Row>
+						<Col>
+							<SiteNavbar />
+						</Col>
+					</Row>
+				</Container>
 
-			<Suspense fallback={ <Spinner color="primary"/> }>
-				<Switch>
-					<Route path="/pages" component={Pages} />
-					<Route path="/" exact>
-						<Home />
-					</Route>
-				</Switch>
-			</Suspense>
+				<Suspense fallback={ <Spinner color="primary" className="page-loader"/> }>
+					<Switch>
+						<Route path="/pages" component={Pages} />
+						<Route path="/" exact>
+							<Home />
+						</Route>
+					</Switch>
+				</Suspense>
+			</div>
 
-			<Container fluid className="bg-primary text-white text-center py-5">
+			<Container fluid className="bg-primary text-white text-center py-5 footer">
 				<Row>
 					<Col>
 						<Container>
@@ -42,7 +44,7 @@ function App() {
 					</Col>
 				</Row>
 			</Container>
-    </div>
+    </Fragment>
   );
 }
 
