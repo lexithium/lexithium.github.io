@@ -1,6 +1,6 @@
 import React, { Fragment, lazy, Suspense, useEffect } from 'react';
 import { Spinner, Container, Row, Col } from 'reactstrap';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import SiteNavbar from '../components/Navbar';
 
 const BlockMuseum = lazy(() => import('./BlockMuseum'));
@@ -41,6 +41,7 @@ const Pages = (props) => {
 					<Route path={`${props.match.url}/nbn-winter`} component={NBNWinter} />
 					<Route path={`${props.match.url}/white-paper`} component={WhitePaper} />
 					<Route path={`${props.match.url}/nbn-fall`} component={NBNFall} />
+					<Route path={`${props.match.url}`} exact render={<Redirect to="/" />} />
 				</Switch>
 			</Suspense>
 		</Fragment>
