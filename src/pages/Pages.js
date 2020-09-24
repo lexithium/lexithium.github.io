@@ -26,7 +26,7 @@ const Pages = (props) => {
 			<Container fluid className="page-border">
 				<Row>
 					<Col>
-						<SiteNavbar needsLinks={true} />
+						<SiteNavbar />
 					</Col>
 				</Row>
 			</Container>

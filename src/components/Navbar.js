@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink } from 'reactstrap';
-import { NavLink as RouterLink } from 'react-router-dom';
+import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem } from 'reactstrap';
+import { NavHashLink } from 'react-router-hash-link';
 import logo from '../assets/img/alexLogo.png';
 
-const SiteNavbar = (props) => {
+const SiteNavbar = () => {
 	const [ isOpen, setIsOpen ] = useState( false );
 
 	return (
@@ -18,19 +18,19 @@ const SiteNavbar = (props) => {
 			<Collapse isOpen={ isOpen } navbar>
 				<Nav className="ml-auto" navbar>
 					<NavItem>
-						{ props.needsLinks ? <RouterLink className="nav-link" to="/#home">home</RouterLink> : <NavLink href="#home">home</NavLink> }
+						<NavHashLink to="/" className="nav-link">home</NavHashLink>
 					</NavItem>
 					<NavItem>
-						{ props.needsLinks ? <RouterLink className="nav-link" to="/#about">about</RouterLink> : <NavLink href="#about">about</NavLink> }
+						<NavHashLink to="/#about" className="nav-link">about</NavHashLink>
 					</NavItem>
 					<NavItem>
-						{ props.needsLinks ? <RouterLink className="nav-link" to="/#portfolio">portfolio</RouterLink> : <NavLink href="#portfolio">portfolio</NavLink> }
+						<NavHashLink to="/#portfolio" className="nav-link">portfolio</NavHashLink>
 					</NavItem>
 					<NavItem>
-						{ props.needsLinks ? <RouterLink className="nav-link" to="/#resume">résumé</RouterLink> : <NavLink href="#resume">résumé</NavLink> }
+						<NavHashLink to="/#resume" className="nav-link">résumé</NavHashLink>
 					</NavItem>
 					<NavItem>
-						{ props.needsLinks ? <RouterLink className="nav-link" to="/#contact">contact</RouterLink> : <NavLink href="#contact">contact</NavLink> }
+						<NavHashLink to="/#contact" className="nav-link">contact</NavHashLink>
 					</NavItem>
 				</Nav>
 			</Collapse>
